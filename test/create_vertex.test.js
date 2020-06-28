@@ -2,13 +2,15 @@ import test from 'tape';
 import createVertex from '../src/lib/create_vertex';
 
 test('createVertex', (t) => {
+  const parentOne = { properties: { id: 'foo' } };
   t.deepEqual(
-    createVertex({ properties: { id: 'foo' } }, [1, 2], '3.4.5', true),
+    createVertex(parentOne, [1, 2], '3.4.5', true),
     {
       type: 'Feature',
       properties: {
         meta: 'vertex',
         parent: 'foo',
+        parentProperties: parentOne.properties,
         coord_path: '3.4.5',
         active: 'true'
       },
@@ -18,13 +20,15 @@ test('createVertex', (t) => {
       }
     }
   );
+  const parentTwo = { properties: { id: 'bar' } };
   t.deepEqual(
-    createVertex({ properties: { id: 'bar' } }, [99, 199], '1', false),
+    createVertex(parentTwo, [99, 199], '1', false),
     {
       type: 'Feature',
       properties: {
         meta: 'vertex',
         parent: 'bar',
+        parentProperties: parentTwo.properties,
         coord_path: '1',
         active: 'false'
       },
@@ -34,10 +38,10 @@ test('createVertex', (t) => {
       }
     }
   );
-
+  const parentThree = { properties: { id: 'bar', baz: 'qux' } };
   t.deepEqual(
     createVertex(
-      { properties: { id: 'bar', baz: 'qux' } },
+      parentThree,
       [99, 199],
       '1',
       false
@@ -47,16 +51,16 @@ test('createVertex', (t) => {
       properties: {
         meta: 'vertex',
         parent: 'bar',
+        parentProperties: parentThree.properties,
         coord_path: '1',
-        active: 'false',
-        baz: 'qux'
+        active: 'false'
       },
       geometry: {
         type: 'Point',
         coordinates: [99, 199]
       }
     },
-    'userProperties are copied to vertices'
+    'userProperties are copied to vertices as parentProperties'
   );
 
   t.end();

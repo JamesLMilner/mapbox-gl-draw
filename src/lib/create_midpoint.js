@@ -32,9 +32,9 @@ export default function(parent, startVertex, endVertex, map) {
   const midpoint = {
     type: Constants.geojsonTypes.FEATURE,
     properties: {
-      ...parent.properties,
       meta: Constants.meta.MIDPOINT,
       parent: parent.properties && parent.properties.id,
+      parentProperties: parent.properties,
       lng: mid.lng,
       lat: mid.lat,
       coord_path: endVertex.properties.coord_path
@@ -44,6 +44,6 @@ export default function(parent, startVertex, endVertex, map) {
       coordinates: [mid.lng, mid.lat]
     }
   };
-  delete midpoint.properties.id;
+
   return midpoint;
 }

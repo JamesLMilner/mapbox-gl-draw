@@ -15,9 +15,9 @@ export default function(parent, coordinates, path, selected) {
   const vertex = {
     type: Constants.geojsonTypes.FEATURE,
     properties: {
-      ...parent.properties,
       meta: Constants.meta.VERTEX,
       parent: parent.properties && parent.properties.id,
+      parentProperties: parent.properties,
       coord_path: path,
       active: selected ?
         Constants.activeStates.ACTIVE :
@@ -28,6 +28,6 @@ export default function(parent, coordinates, path, selected) {
       coordinates
     }
   };
-  delete vertex.properties.id;
+
   return vertex;
 }

@@ -25,7 +25,8 @@ test('createSupplementaryPoints with a point', (t) => {
       active: 'false',
       coord_path: null,
       meta: 'vertex',
-      parent: 'foo'
+      parent: 'foo',
+      parentProperties: point.properties
     },
     type: 'Feature'
   }]);
@@ -56,7 +57,8 @@ test('createSupplementaryPoints with a line, no midpoints', (t) => {
       active: 'false',
       coord_path: '0',
       meta: 'vertex',
-      parent: 'foo'
+      parent: 'foo',
+      parentProperties: line.properties
     },
     type: 'Feature'
   }, {
@@ -68,7 +70,8 @@ test('createSupplementaryPoints with a line, no midpoints', (t) => {
       active: 'false',
       coord_path: '1',
       meta: 'vertex',
-      parent: 'foo'
+      parent: 'foo',
+      parentProperties: line.properties
     },
     type: 'Feature'
   }, {
@@ -80,7 +83,8 @@ test('createSupplementaryPoints with a line, no midpoints', (t) => {
       active: 'false',
       coord_path: '2',
       meta: 'vertex',
-      parent: 'foo'
+      parent: 'foo',
+      parentProperties: line.properties
     },
     type: 'Feature'
   }], 'adds vertices');
@@ -110,7 +114,8 @@ test('createSupplementaryPoints with a polygon, no midpoints', (t) => {
       active: 'false',
       coord_path: '0.0',
       meta: 'vertex',
-      parent: 'foo'
+      parent: 'foo',
+      parentProperties: polygon.properties
     },
     type: 'Feature'
   }, {
@@ -122,7 +127,9 @@ test('createSupplementaryPoints with a polygon, no midpoints', (t) => {
       active: 'false',
       coord_path: '0.1',
       meta: 'vertex',
-      parent: 'foo'
+      parent: 'foo',
+      parentProperties: polygon.properties
+
     },
     type: 'Feature'
   }, {
@@ -134,7 +141,8 @@ test('createSupplementaryPoints with a polygon, no midpoints', (t) => {
       active: 'false',
       coord_path: '0.2',
       meta: 'vertex',
-      parent: 'foo'
+      parent: 'foo',
+      parentProperties: polygon.properties
     },
     type: 'Feature'
   }, {
@@ -146,7 +154,8 @@ test('createSupplementaryPoints with a polygon, no midpoints', (t) => {
       active: 'false',
       coord_path: '0.3',
       meta: 'vertex',
-      parent: 'foo'
+      parent: 'foo',
+      parentProperties: polygon.properties
     },
     type: 'Feature'
   }], 'adds vertices');
@@ -182,7 +191,8 @@ test('createSupplementaryPoints with line, midpoints, selected coordinate', (t) 
       active: 'false',
       coord_path: '0',
       meta: 'vertex',
-      parent: 'foo'
+      parent: 'foo',
+      parentProperties: line.properties
     },
     type: 'Feature'
   }, {
@@ -195,7 +205,8 @@ test('createSupplementaryPoints with line, midpoints, selected coordinate', (t) 
       lat: 2,
       lng: 2,
       meta: 'midpoint',
-      parent: 'foo'
+      parent: 'foo',
+      parentProperties: line.properties
     },
     type: 'Feature'
   }, {
@@ -207,7 +218,8 @@ test('createSupplementaryPoints with line, midpoints, selected coordinate', (t) 
       active: 'true',
       coord_path: '1',
       meta: 'vertex',
-      parent: 'foo'
+      parent: 'foo',
+      parentProperties: line.properties
     },
     type: 'Feature'
   }, {
@@ -220,7 +232,8 @@ test('createSupplementaryPoints with line, midpoints, selected coordinate', (t) 
       lat: 6,
       lng: 6,
       meta: 'midpoint',
-      parent: 'foo'
+      parent: 'foo',
+      parentProperties: line.properties
     },
     type: 'Feature'
   }, {
@@ -232,7 +245,8 @@ test('createSupplementaryPoints with line, midpoints, selected coordinate', (t) 
       active: 'false',
       coord_path: '2',
       meta: 'vertex',
-      parent: 'foo'
+      parent: 'foo',
+      parentProperties: line.properties
     },
     type: 'Feature'
   }], 'adds vertices and midpoints');
@@ -269,7 +283,8 @@ test('createSupplementaryPoints with polygon, midpoints, selection', (t) => {
       active: 'false',
       coord_path: '0.0',
       meta: 'vertex',
-      parent: 'foo'
+      parent: 'foo',
+      parentProperties: polygon.properties
     },
     type: 'Feature'
   }, {
@@ -282,7 +297,8 @@ test('createSupplementaryPoints with polygon, midpoints, selection', (t) => {
       lat: 1.5,
       lng: 1.5,
       meta: 'midpoint',
-      parent: 'foo'
+      parent: 'foo',
+      parentProperties: polygon.properties
     },
     type: 'Feature'
   }, {
@@ -294,7 +310,8 @@ test('createSupplementaryPoints with polygon, midpoints, selection', (t) => {
       active: 'true',
       coord_path: '0.1',
       meta: 'vertex',
-      parent: 'foo'
+      parent: 'foo',
+      parentProperties: polygon.properties
     },
     type: 'Feature'
   }, {
@@ -307,7 +324,8 @@ test('createSupplementaryPoints with polygon, midpoints, selection', (t) => {
       lat: 2.5,
       lng: 2.5,
       meta: 'midpoint',
-      parent: 'foo'
+      parent: 'foo',
+      parentProperties: polygon.properties
     },
     type: 'Feature'
   }, {
@@ -319,7 +337,8 @@ test('createSupplementaryPoints with polygon, midpoints, selection', (t) => {
       active: 'false',
       coord_path: '0.2',
       meta: 'vertex',
-      parent: 'foo'
+      parent: 'foo',
+      parentProperties: polygon.properties
     },
     type: 'Feature'
   }, {
@@ -332,7 +351,8 @@ test('createSupplementaryPoints with polygon, midpoints, selection', (t) => {
       lat: 3.5,
       lng: 3.5,
       meta: 'midpoint',
-      parent: 'foo'
+      parent: 'foo',
+      parentProperties: polygon.properties
     },
     type: 'Feature'
   }, {
@@ -344,7 +364,8 @@ test('createSupplementaryPoints with polygon, midpoints, selection', (t) => {
       active: 'false',
       coord_path: '0.3',
       meta: 'vertex',
-      parent: 'foo'
+      parent: 'foo',
+      parentProperties: polygon.properties
     },
     type: 'Feature'
   }, {
@@ -357,7 +378,8 @@ test('createSupplementaryPoints with polygon, midpoints, selection', (t) => {
       lat: 2.5,
       lng: 2.5,
       meta: 'midpoint',
-      parent: 'foo'
+      parent: 'foo',
+      parentProperties: polygon.properties
     },
     type: 'Feature'
   }], 'adds vertices and midpoints');
@@ -396,7 +418,8 @@ test('createSupplementaryPoints with MultiLineString, midpoints, selected coordi
       active: 'false',
       coord_path: '0.0',
       meta: 'vertex',
-      parent: 'foo'
+      parent: 'foo',
+      parentProperties: line.properties
     },
     type: 'Feature'
   }, {
@@ -409,7 +432,8 @@ test('createSupplementaryPoints with MultiLineString, midpoints, selected coordi
       lat: 2,
       lng: 2,
       meta: 'midpoint',
-      parent: 'foo'
+      parent: 'foo',
+      parentProperties: line.properties
     },
     type: 'Feature'
   }, {
@@ -421,7 +445,8 @@ test('createSupplementaryPoints with MultiLineString, midpoints, selected coordi
       active: 'false',
       coord_path: '0.1',
       meta: 'vertex',
-      parent: 'foo'
+      parent: 'foo',
+      parentProperties: line.properties
     },
     type: 'Feature'
   }, {
@@ -434,7 +459,8 @@ test('createSupplementaryPoints with MultiLineString, midpoints, selected coordi
       lat: 6,
       lng: 6,
       meta: 'midpoint',
-      parent: 'foo'
+      parent: 'foo',
+      parentProperties: line.properties
     },
     type: 'Feature'
   }, {
@@ -446,7 +472,8 @@ test('createSupplementaryPoints with MultiLineString, midpoints, selected coordi
       active: 'false',
       coord_path: '0.2',
       meta: 'vertex',
-      parent: 'foo'
+      parent: 'foo',
+      parentProperties: line.properties
     },
     type: 'Feature'
   }, {
@@ -458,7 +485,8 @@ test('createSupplementaryPoints with MultiLineString, midpoints, selected coordi
       active: 'false',
       coord_path: '1.0',
       meta: 'vertex',
-      parent: 'foo'
+      parent: 'foo',
+      parentProperties: line.properties
     },
     type: 'Feature'
   }, {
@@ -471,7 +499,8 @@ test('createSupplementaryPoints with MultiLineString, midpoints, selected coordi
       lat: 22,
       lng: 22,
       meta: 'midpoint',
-      parent: 'foo'
+      parent: 'foo',
+      parentProperties: line.properties
     },
     type: 'Feature'
   }, {
@@ -483,7 +512,8 @@ test('createSupplementaryPoints with MultiLineString, midpoints, selected coordi
       active: 'false',
       coord_path: '1.1',
       meta: 'vertex',
-      parent: 'foo'
+      parent: 'foo',
+      parentProperties: line.properties
     },
     type: 'Feature'
   }, {
@@ -496,7 +526,8 @@ test('createSupplementaryPoints with MultiLineString, midpoints, selected coordi
       lat: 26,
       lng: 26,
       meta: 'midpoint',
-      parent: 'foo'
+      parent: 'foo',
+      parentProperties: line.properties
     },
     type: 'Feature'
   }, {
@@ -508,7 +539,8 @@ test('createSupplementaryPoints with MultiLineString, midpoints, selected coordi
       active: 'true',
       coord_path: '1.2',
       meta: 'vertex',
-      parent: 'foo'
+      parent: 'foo',
+      parentProperties: line.properties
     },
     type: 'Feature'
   }]);
@@ -542,7 +574,8 @@ test('createSupplementaryPoints with a line, not all midpoints rendered because 
       active: 'false',
       coord_path: '0',
       meta: 'vertex',
-      parent: 'foo'
+      parent: 'foo',
+      parentProperties: line.properties
     },
     type: 'Feature'
   }, {
@@ -555,7 +588,7 @@ test('createSupplementaryPoints with a line, not all midpoints rendered because 
       lat: 2,
       lng: 2,
       meta: 'midpoint',
-      parent: 'foo'
+      parent: 'foo',      parentProperties: line.properties
     },
     type: 'Feature'
   }, {
@@ -567,7 +600,8 @@ test('createSupplementaryPoints with a line, not all midpoints rendered because 
       active: 'false',
       coord_path: '1',
       meta: 'vertex',
-      parent: 'foo'
+      parent: 'foo',
+      parentProperties: line.properties
     },
     type: 'Feature'
   }, {
@@ -579,7 +613,8 @@ test('createSupplementaryPoints with a line, not all midpoints rendered because 
       active: 'false',
       coord_path: '2',
       meta: 'vertex',
-      parent: 'foo'
+      parent: 'foo',
+      parentProperties: line.properties
     },
     type: 'Feature'
   }], 'adds vertices');
@@ -614,7 +649,8 @@ test('createSupplementaryPoints with a line, not all midpoints rendered because 
       active: 'false',
       coord_path: '0',
       meta: 'vertex',
-      parent: 'foo'
+      parent: 'foo',
+      parentProperties: line.properties
     },
     type: 'Feature'
   }, {
@@ -627,7 +663,8 @@ test('createSupplementaryPoints with a line, not all midpoints rendered because 
       lat: 2,
       lng: 2,
       meta: 'midpoint',
-      parent: 'foo'
+      parent: 'foo',
+      parentProperties: line.properties
     },
     type: 'Feature'
   }, {
@@ -639,7 +676,8 @@ test('createSupplementaryPoints with a line, not all midpoints rendered because 
       active: 'false',
       coord_path: '1',
       meta: 'vertex',
-      parent: 'foo'
+      parent: 'foo',
+      parentProperties: line.properties
     },
     type: 'Feature'
   }, {
@@ -651,7 +689,8 @@ test('createSupplementaryPoints with a line, not all midpoints rendered because 
       active: 'false',
       coord_path: '2',
       meta: 'vertex',
-      parent: 'foo'
+      parent: 'foo',
+      parentProperties: line.properties
     },
     type: 'Feature'
   }], 'adds vertices');
@@ -689,7 +728,7 @@ test('createSupplementaryPoints with line, midpoints, selected coordinate, userP
       coord_path: '0',
       meta: 'vertex',
       parent: 'foo',
-      bar: 'baz'
+      parentProperties: line.properties
     },
     type: 'Feature'
   }, {
@@ -703,7 +742,7 @@ test('createSupplementaryPoints with line, midpoints, selected coordinate, userP
       lng: 2,
       meta: 'midpoint',
       parent: 'foo',
-      bar: 'baz'
+      parentProperties: line.properties
     },
     type: 'Feature'
   }, {
@@ -716,7 +755,7 @@ test('createSupplementaryPoints with line, midpoints, selected coordinate, userP
       coord_path: '1',
       meta: 'vertex',
       parent: 'foo',
-      bar: 'baz'
+      parentProperties: line.properties
     },
     type: 'Feature'
   }, {
@@ -730,7 +769,7 @@ test('createSupplementaryPoints with line, midpoints, selected coordinate, userP
       lng: 6,
       meta: 'midpoint',
       parent: 'foo',
-      bar: 'baz'
+      parentProperties: line.properties
     },
     type: 'Feature'
   }, {
@@ -743,7 +782,7 @@ test('createSupplementaryPoints with line, midpoints, selected coordinate, userP
       coord_path: '2',
       meta: 'vertex',
       parent: 'foo',
-      bar: 'baz'
+      parentProperties: line.properties
     },
     type: 'Feature'
   }], 'adds vertices and midpoints with userProperties');

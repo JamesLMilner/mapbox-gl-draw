@@ -213,8 +213,9 @@ test('draw_polygon render active polygon with 3 coordinates (and closer)', (t) =
   t.deepEqual(memo[0], {
     type: 'Feature',
     properties: {
-      parent: testPolygon.id,
       meta: 'vertex',
+      parent: testPolygon.id,
+      parentProperties: { id: testPolygon.id, active: 'true', meta: 'feature' },
       coord_path: '0.0',
       active: 'false'
     },
@@ -226,8 +227,9 @@ test('draw_polygon render active polygon with 3 coordinates (and closer)', (t) =
   t.deepEqual(memo[1], {
     type: 'Feature',
     properties: {
-      parent: testPolygon.id,
       meta: 'vertex',
+      parent: testPolygon.id,
+      parentProperties: { id: testPolygon.id, active: 'true', meta: 'feature' },
       coord_path: '0.2',
       active: 'false'
     },
